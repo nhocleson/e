@@ -9419,7 +9419,6 @@ task.spawn(function()
 						end
 					end
 				end
-			else
 			if Toggles.TKA.Inmate then
 				for i,v in pairs(Teams.Inmates:GetPlayers()) do
 					if v.Character and v ~= LocalPlayer and not (v.Character:FindFirstChild("Humanoid").Health == 0 or v.Character:FindFirstChildWhichIsA("ForceField")) then
