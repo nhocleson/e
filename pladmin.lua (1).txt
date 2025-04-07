@@ -9419,23 +9419,6 @@ task.spawn(function()
 						end
 					end
 				end
-			else
-				if Toggles.AntiArrest then
-					for _, PotangIna in pairs(Teams.Guards:GetPlayers()) do
-						if PotangIna.Character and PotangIna ~= LocalPlayer then
-							if PotangIna.Character:FindFirstChild("Handcuffs") and PotangIna.Character:FindFirstChildOfClass("Humanoid").Health ~= 0 then
-								local PPart, LPart = PotangIna.Character.PrimaryPart, LocalPlayer.Character.PrimaryPart
-								if PPart and LPart and CheckWhitelist(PotangIna) then
-									if (PPart.Position-LPart.Position).Magnitude <= 20 then
-										for i = 1, 10 do
-											MeleEve(PotangIna)
-										end
-									end
-								end
-							end
-						end
-					end
-				end
 			end
 			if Toggles.TKA.Inmate then
 				for i,v in pairs(Teams.Inmates:GetPlayers()) do
