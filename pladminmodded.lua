@@ -992,7 +992,7 @@ local LAction = function(args, args2)
 	end
 end
 local function Shoot(pl, gun)
-				local from = me.Character.HumanoidRootPart
+				local from = game.Players.LocalPlayer.Character.HumanoidRootPart
 				local to = pl.Character.HumanoidRootPart
 				local args = {
 								{
@@ -9515,7 +9515,9 @@ if v.Character.Humanoid.Health > 21 then
 if not me.Backpack:FindFirstChild("M9") then
 Gun("M9")
 end
-task.delay(0.5,Shoot(v, "M9"))
+task.delay(0.5, function()
+Shoot(v, "M9")
+end)
 game:GetService("ReplicatedStorage").ReloadEvent:FireServer(game.Players.LocalPlayer.Backpack:FindFirstChild("M9"))
 end
 end
