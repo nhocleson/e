@@ -7055,7 +7055,7 @@ elseif cm("deletetogglelist") then
 elseif cm("print") then
 print("Success")
 elseif cm("edge") then
-table.insert(Loops.Edge, PlrFromArgs(Args[2], false)
+table.insert(Loops.Edge, PlrFromArgs(Args[2], false))
 elseif cm("unedge") then
 Loops.Edge = {}
 else
