@@ -9502,19 +9502,18 @@ local me = game.Players.LocalPlayer
 while task.wait() do
 for i, v in next, Loops.Edge do
 if not game.Players:FindFirstChild(v) then
-Loops.Edge[i] = nil
+table.remove(Loops.Edge, i)
 continue
 end
 if not v.Character or not v.Character:FindFirstChild("Humanoid") then
 continue
 end
-if v.Character.Humanoid and v.Character.Humanoid.Health > 21 then
+if v.Character.Humanoid.Health > 21 then
 if not me.Backpack:FindFirstChild("M9") then
 Gun("M9")
 end
-task.delay(0.5, function()
 Shoot(v, "M9")
-end)
+task.wait(0.5)
 end
 end
 end
