@@ -10037,6 +10037,7 @@ task.spawn(function()
 	AddList("fard / fart [plr]", "Silent but deadly fart", false) --V, Haha funny fart joke please laugh sussy amogus skibidi toilet
 	AddList("carwalk / weldcar", "Makes you walk while a car is welded to your character", false) --V
 	AddList("troll / tro [plr,random]", "Troll a player by fake punchsounds", false) --V
+AddList("print", "print stuff", false)
 
 	AddList("TELEPORTS", false, true) --TELEPORT PLACE(S)
 	AddList("nexus / nex [plr or me]", "Teleports to the location: Nexus", false) --
