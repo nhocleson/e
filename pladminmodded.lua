@@ -991,6 +991,22 @@ local LAction = function(args, args2)
 		LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
 	end
 end
+local function Shoot(pl, gun)
+				local from = me.Character.HumanoidRootPart
+				local to = pl.Character.HumanoidRootPart
+				local args = {
+								{
+												{
+																RayObject = Ray.new(Vector3.new(), Vector3.new()),
+																Distance = 0,
+																Cframe = CFrame.new(),
+																Hit = pl.Character:FindFirstChild("Torso")
+												}
+								},
+								game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(gun)
+				}
+				game:GetService("ReplicatedStorage"):WaitForChild("ShootEvent"):FireServer(unpack(args))
+end
 --Command functions
 local PlrFromArgs = function(plr, args)
 	if plr and plr:lower() == "me" then
@@ -9492,7 +9508,7 @@ if not v then
 Loops.Edge[i] = nil
 continue
 end
-if not v.Character or v.Character:FindFirstChild("Humanoid") then
+if not v.Character or not v.Character:FindFirstChild("Humanoid") then
 continue
 end
 if v.Character.Humanoid.Health > 21 then
