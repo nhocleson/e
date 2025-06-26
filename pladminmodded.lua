@@ -9501,7 +9501,7 @@ task.spawn(function()
 local me = game.Players.LocalPlayer
 while task.wait() do
 for i, v in next, Loops.Edge do
-if not game.Players:FindFirstChild(v) then
+if not v then
 table.remove(Loops.Edge, i)
 continue
 end
