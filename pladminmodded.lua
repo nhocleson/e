@@ -9512,8 +9512,9 @@ if v.Character.Humanoid.Health > 21 then
 if not me.Backpack:FindFirstChild("M9") then
 Gun("M9")
 end
+task.delay(0.5, function()
 Shoot(v, "M9")
-task.wait(0.5)
+end)
 end
 end
 end
