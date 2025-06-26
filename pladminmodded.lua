@@ -9503,6 +9503,7 @@ task.delay(0.5,Shoot(v, "M9"))
 game:GetService("ReplicatedStorage").ReloadEvent:FireServer(game.Players.LocalPlayer.Backpack:FindFirstChild("M9"))
 end
 end
+end
 end)
 --Loops (Non-interfering)
 task.spawn(function()
