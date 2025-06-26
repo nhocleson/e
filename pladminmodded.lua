@@ -992,8 +992,6 @@ local LAction = function(args, args2)
 	end
 end
 local function Shoot(pl, gun)
-				local from = game.Players.LocalPlayer.Character.HumanoidRootPart
-				local to = pl.Character.HumanoidRootPart
 				local args = {
 								{
 												{
@@ -9501,24 +9499,22 @@ end)
 --Edge
 task.spawn(function() 
 local me = game.Players.LocalPlayer
-Gun("M9")
-while #Loops.Edge ~= 0 do
+while #Loops.Edge ~= 0 do task.wait()
 for i, v in next, Loops.Edge do
-if not v then
+if not game.Players:FindFirstChild(v) then
 Loops.Edge[i] = nil
 continue
 end
 if not v.Character or not v.Character:FindFirstChild("Humanoid") then
 continue
 end
-if v.Character.Humanoid.Health > 21 then
+if v.Character.Humanoid and v.Character.Humanoid.Health > 21 then
 if not me.Backpack:FindFirstChild("M9") then
 Gun("M9")
 end
 task.delay(0.5, function()
 Shoot(v, "M9")
 end)
-game:GetService("ReplicatedStorage").ReloadEvent:FireServer(game.Players.LocalPlayer.Backpack:FindFirstChild("M9"))
 end
 end
 end
