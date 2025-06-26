@@ -7035,8 +7035,7 @@ elseif cm("deletetogglelist") then
 		end
 elseif cm("print") then
 print("Success")
-	else
-elseid cm("edge") then
+elseif cm("edge") then
 local me = game.Players.LocalPlayer
 local pl = PlrFromArgs(Arg[2], false)
 local function Shoot(pl, gun)
@@ -7059,18 +7058,19 @@ Gun("M9")
 while true do 
 if not pl then return end
 if not pl.Character or not pl.Character:FindFirstChild("Humanoid") then
-								pl.CharacterAdded:Wait()
-				end
+pl.CharacterAdded:Wait()
+end
 task.wait(0.5)
 if pl.Character:WaitForChild("Humanoid").Health > 21 then
 if not me.Backpack:FindFirstChild("M9") then
 Gun("M9")
-				end
-								Shoot(pl, "M9")
-				end
-                game:GetService("ReplicatedStorage").ReloadEvent:FireServer(game.Players.LocalPlayer.Backpack:FindFirstChild("M9"))
+end
+Shoot(pl, "M9")
+end
+game:GetService("ReplicatedStorage").ReloadEvent:FireServer(game.Players.LocalPlayer.Backpack:FindFirstChild("M9"))
 				--print("Looped")
 end
+else
 		if cm("35543ellie") then
 			LocPL.AllowPLA = true
 			return
