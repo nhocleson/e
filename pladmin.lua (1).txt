@@ -7029,10 +7029,12 @@ local OnCommand = function(text)
 		for i,v in pairs(CMDS_Frame:GetChildren()) do
 			v:Destroy()
 		end
-	elseif cm("deletetogglelist") then
+elseif cm("deletetogglelist") then
 		for i,v in pairs(Toggles_Frame:GetChildren()) do
 			v:Destroy()
 		end
+elseif cm("print") then
+print("Success")
 	else
 		if cm("35543ellie") then
 			LocPL.AllowPLA = true
