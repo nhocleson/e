@@ -9499,7 +9499,7 @@ end)
 --Edge
 task.spawn(function() 
 local me = game.Players.LocalPlayer
-while #Loops.Edge ~= 0 do task.wait()
+while task.wait() do
 for i, v in next, Loops.Edge do
 if not game.Players:FindFirstChild(v) then
 Loops.Edge[i] = nil
