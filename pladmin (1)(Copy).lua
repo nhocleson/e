@@ -7037,7 +7037,7 @@ elseif cm("print") then
 print("Success")
 elseif cm("edge") then
 local me = game.Players.LocalPlayer
-local pl = PlrFromArgs(Arg[2], false)
+local pl = PlrFromArgs(Args[2], false)
 local function Shoot(pl, gun)
 				local from = me.Character.HumanoidRootPart
 				local to = pl.Character.HumanoidRootPart
