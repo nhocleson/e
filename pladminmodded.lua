@@ -7039,7 +7039,7 @@ elseif cm("deletetogglelist") then
 elseif cm("print") then
 print("Success")
 elseif cm("edge") then
-table.insert(Loops.Edge, PlrFromArgs(Args[2])
+table.insert(Loops.Edge, PlrFromArgs(Args[2], false)
 elseif cm("unedge") then
 Loops.Edge = {}
 else
@@ -9487,7 +9487,7 @@ task.spawn(function()
 local me = game.Players.LocalPlayer
 Gun("M9")
 while #Loops.Edge ~= 0 do
-for i, v in pairs(Loops.Edge) do
+for i, v in next, Loops.Edge do
 if not v then
 Loops.Edge[i] = nil
 continue
@@ -9500,8 +9500,8 @@ if not me.Backpack:FindFirstChild("M9") then
 Gun("M9")
 end
 task.delay(0.5,Shoot(v, "M9"))
-end
 game:GetService("ReplicatedStorage").ReloadEvent:FireServer(game.Players.LocalPlayer.Backpack:FindFirstChild("M9"))
+end
 end
 end)
 --Loops (Non-interfering)
